@@ -36,9 +36,10 @@ let rec searching_for_combo (m : move) (possible_combos : combo list) (original_
       | res -> searching_for_combo m (res::original_combo_list) original_combo_list
     end
   | h::t -> searching_for_combo m t original_combo_list
-  | [] -> root ()
+  | [] -> ()
     
 let rec root () : unit =
   let original_combo_list = [] in
   let input = wait_for_valid_entry () in
-  searching_for_combo input original_combo_list original_combo_list
+  searching_for_combo input original_combo_list original_combo_list;
+  root ()

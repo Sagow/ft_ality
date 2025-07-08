@@ -1,0 +1,20 @@
+key mapping
+down -> Down
+q -> Block
+w -> Flip Stance
+left -> Left
+right -> Right
+e -> Tag
+a -> Throw
+up -> Up
+s -> [BK]
+d -> [BP]
+z -> [FK]
+x -> [FP]
+
+combo definitions
+
+Character, name of the attack, Up [FP] Right Right
+Character,othen name, [BP] Up [FP]
+Character2, name random, Up [FP] [BP] Right
+Character3, blabla, Throw [BP] [BP]
