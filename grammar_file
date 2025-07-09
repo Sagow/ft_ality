@@ -1,12 +1,12 @@
 key mapping
-down -> Down
+DOWN -> Down
 q -> Block
 w -> Flip Stance
-left -> Left
-right -> Right
+LEFT -> Left
+RIGHT -> Right
 e -> Tag
 a -> Throw
-up -> Up
+UP -> Up
 s -> [BK]
 d -> [BP]
 z -> [FK]
