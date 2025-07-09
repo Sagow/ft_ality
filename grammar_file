@@ -15,6 +15,7 @@ x -> [FP]
 combo definitions
 
 Character, name of the attack, Up [FP] Right Right
+Character3, blabla, Throw [BP] [BP] Right
+Character2, name random, Up
+
 Character,othen name, [BP] Up [FP]
-Character2, name random, Up [FP] [BP] Right
-Character3, blabla, Throw [BP] [BP]

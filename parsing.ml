@@ -59,9 +59,12 @@ let () =
     if l <> [] then
       try
         begin
-          let data = Key_mapping.find_key_mapping l in
-          check_validity_of_mapping data;
-          Key_mapping.print_pair data
+          let data_key = Key_mapping.find_key_mapping l in
+          check_validity_of_mapping data_key;
+          Key_mapping.print_pair data_key;
+          let data_combo = Combo_mapping.find_combo_mapping l in
+          Combo_mapping.print_combo_list data_combo
+          (* check_validity_of_mapping data_combo; *)
         end 
       with
       | Failure msg -> print_endline msg

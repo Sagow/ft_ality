@@ -311,4 +311,4 @@ let key_to_string (k : key) : string =
 let rec test_print_list (l : string list) =
   match l with
   | h::t -> print_endline h; test_print_list t
-  | [] -> print_endline "end of file"
+  | [] -> ()
