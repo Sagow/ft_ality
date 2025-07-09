@@ -28,12 +28,17 @@ let get_file_content (f : string) : string list =
     get_next_line i []
   with _ -> failwith ("Failed to open the file " ^ f)
 
+
+
 let check_validity_of_mapping (l : (Utils.move * Utils.key) list) : unit =
   let split = List.split l in
   let nb_moves = List.length(List.sort_uniq (fun x y -> compare x y) (fst split)) in
   let nb_keys = List.length(List.sort_uniq (fun x y -> compare x y) (snd split)) in
   if nb_moves < 12 then
+    begin
+      Key_mapping.print_pair l;
     failwith "At least one move is undefined in the key mapping"
+    end
   else if nb_keys < List.length (snd split) then
     begin
     (* let rec loop l =
