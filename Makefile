@@ -1,4 +1,4 @@
 RESULT = ft_ality
-SOURCES = parsing.ml
+SOURCES = utils.mli utils.ml key_mapping.ml parsing.ml
 OCAMLMAKEFILE = OCamlMakefile
 include $(OCAMLMAKEFILE)
