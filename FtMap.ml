@@ -101,8 +101,7 @@ let () =
   let m = StringIntMap.from_list [("Banana", 3);("Banana", 7);("Apple", 12);("Peaches", 4);("Pineapple", 6)] in
   StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m; print_endline "";
   let m2 = StringIntMap.merge_duplicates (+) m in
-  StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m2
-  (* match StringIntMap.find_opt m "Banana" with
-  | Some(n) -> Printf.printf "Found %d.\n" n
-  | None -> Printf.printf "Found none.\n" *)
-  (* let Some(peaches_cnt) = StringIntMap.find_opt *)
+  StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m2; print_endline "";
+  match StringIntMap.find_opt m2 "Banana" with
+  | Some(n) -> Printf.printf "Found %d bananas.\n" n
+  | None -> Printf.printf "Found no banana.\n"
