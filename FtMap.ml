@@ -10,7 +10,7 @@ module type MAP = sig
   type pair_t = (key_t * value_t)
   type t = pair_t list
 
-  val from_list : pair_t list -> t
+  val of_list : pair_t list -> t
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
   val iter : (pair_t -> unit) -> t -> unit
@@ -29,7 +29,7 @@ module MakeMap : MAKEMAP =
     type pair_t = (key_t * value_t)
     type t = pair_t list
 
-    let from_list lst =
+    let of_list lst =
       List.sort (fun e1 e2 -> KV.cmp (fst e1) (fst e2)) lst
 
     let find_opt
@@ -98,7 +98,7 @@ end
 module StringIntMap : (MAP with type key_t := KVStringInt.key_t and type value_t := KVStringInt.value_t) = MakeMap (KVStringInt)
 
 let () =
-  let m = StringIntMap.from_list [("Banana", 3);("Banana", 7);("Apple", 12);("Peaches", 4);("Pineapple", 6)] in
+  let m = StringIntMap.of_list [("Banana", 3);("Banana", 7);("Apple", 12);("Peaches", 4);("Pineapple", 6)] in
   StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m; print_endline "";
   let m2 = StringIntMap.merge_duplicates (+) m in
   StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m2; print_endline "";
