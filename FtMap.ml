@@ -17,12 +17,12 @@ module type MAP = sig
   val merge_duplicates : (value_t -> value_t -> value_t) -> t -> t
 end
 
-module type MAKEMAP =
+module type MAKE =
   functor (KV : KEYVALUE) -> MAP with
     type key_t = KV.key_t and
     type value_t = KV.value_t
 
-module MakeMap : MAKEMAP =
+module Make : MAKE =
   functor (KV : KEYVALUE) -> struct
     type key_t = KV.key_t
     type value_t = KV.value_t
@@ -95,7 +95,7 @@ module KVStringInt : (KEYVALUE with type key_t = string and type value_t = int) 
   let cmp = String.compare
 end
 
-module StringIntMap : (MAP with type key_t := KVStringInt.key_t and type value_t := KVStringInt.value_t) = MakeMap (KVStringInt)
+module StringIntMap : (MAP with type key_t := KVStringInt.key_t and type value_t := KVStringInt.value_t) = Make (KVStringInt)
 
 let () =
   let m = StringIntMap.of_list [("Banana", 3);("Banana", 7);("Apple", 12);("Peaches", 4);("Pineapple", 6)] in
