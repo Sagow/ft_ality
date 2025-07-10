@@ -11,6 +11,7 @@ module type MAP = sig
   type t = pair_t list
 
   val of_list : pair_t list -> t
+  val to_list : t -> pair_t list
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
   val iter : (pair_t -> unit) -> t -> unit
@@ -33,6 +34,11 @@ module Make : MAKE =
       (lst : pair_t list)
       : t =
       List.sort (fun e1 e2 -> KV.cmp (fst e1) (fst e2)) lst
+
+    let to_list
+      (map : t)
+      : pair_t list =
+      map
 
     let find_opt
       (map : t)
