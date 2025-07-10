@@ -29,7 +29,9 @@ module Make : MAKE =
     type pair_t = (key_t * value_t)
     type t = pair_t list
 
-    let of_list lst =
+    let of_list
+      (lst : pair_t list)
+      : t =
       List.sort (fun e1 e2 -> KV.cmp (fst e1) (fst e2)) lst
 
     let find_opt
