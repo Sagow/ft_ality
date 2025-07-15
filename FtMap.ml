@@ -13,6 +13,7 @@ module type MAP = sig
   val cmp : pair_t -> pair_t -> int
   val of_list : pair_t list -> t
   val to_list : t -> pair_t list
+  val empty : t
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
   val iter : (pair_t -> unit) -> t -> unit
@@ -46,6 +47,10 @@ module Make : MAKE =
       (map : t)
       : pair_t list =
       map
+
+    let empty
+      : t =
+      []
 
     let find_opt
       (map : t)
