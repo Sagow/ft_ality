@@ -10,6 +10,7 @@ module type MAP = sig
   type pair_t = (key_t * value_t)
   type t = pair_t list
 
+  val cmp : pair_t -> pair_t -> int
   val of_list : pair_t list -> t
   val to_list : t -> pair_t list
   val find_opt : t -> key_t -> value_t option
@@ -30,10 +31,16 @@ module Make : MAKE =
     type pair_t = (key_t * value_t)
     type t = pair_t list
 
+    let cmp
+      (e1 : pair_t)
+      (e2 : pair_t)
+      : int =
+        KV.cmp (fst e1) (fst e2)
+
     let of_list
       (lst : pair_t list)
       : t =
-      List.sort (fun e1 e2 -> KV.cmp (fst e1) (fst e2)) lst
+      List.sort cmp lst
 
     let to_list
       (map : t)
