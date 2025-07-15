@@ -64,23 +64,9 @@ module Make : MAKE =
       (map : t)
       (to_find : key_t)
       : value_t option =
-      let rec find_opt_rec
-        (start : int)
-        (len : int)
-        : value_t option =
-          if len = 0
-          then None
-          else begin
-            let middle = len / 2 + start in
-            let mid_elem = List.nth map middle in
-            let cmp_res : int = KV.cmp to_find (fst mid_elem) in
-            match cmp_res with
-            | n when n > 0 -> find_opt_rec (middle + 1) ((len - 1) / 2)
-            | n when n < 0 -> find_opt_rec start (len / 2)
-            | _ -> Some(snd mid_elem) (* case 0 *)
-          end
-      in
-      find_opt_rec 0 (List.length map)
+      match List.find_opt (fun x -> KV.cmp (fst x) to_find = 0) map with
+      | Some(key, value) -> Some(value)
+      | None -> None
 
     let contains
       (map : t)
