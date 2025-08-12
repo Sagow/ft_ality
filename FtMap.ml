@@ -14,6 +14,7 @@ module type MAP = sig
   val of_list : pair_t list -> t
   val to_list : t -> pair_t list
   val empty : t
+  val merge : pair_t list -> t -> t
   val add : key_t -> value_t -> t -> t
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
@@ -52,6 +53,12 @@ module Make : MAKE =
     let empty
       : t =
       []
+
+    let merge
+      (lst : pair_t list)
+      (map : t)
+      : t =
+      List.merge cmp map lst
 
     let add
       (key : key_t)
