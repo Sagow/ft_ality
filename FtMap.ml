@@ -142,7 +142,7 @@ end
 
 module StringIntMap : (MAP with type key_t := KVStringInt.key_t and type value_t := KVStringInt.value_t) = Make (KVStringInt)
 
-let () =
+let test () : unit =
   let m = StringIntMap.of_list [("Banana", 3);("Banana", 7);("Apple", 12);("Peaches", 4);("Pineapple", 6)] in
   StringIntMap.iter (fun (key, value) -> Printf.printf "%s: %d\n" key value) m; print_endline "";
   let m2 = StringIntMap.merge_duplicates (+) m in
