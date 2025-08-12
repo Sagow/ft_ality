@@ -20,6 +20,7 @@ module type MAP = sig
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
   val iter : (pair_t -> unit) -> t -> unit
+  val map : (pair_t -> 'a) -> t -> 'a list
   val merge_duplicates : (value_t -> value_t -> value_t) -> t -> t
 end
 
@@ -105,6 +106,8 @@ module Make : MAKE =
       | None -> false
 
     let iter = List.iter
+
+    let map = List.map
 
     let merge_duplicates
       (f : (value_t -> value_t -> value_t))
