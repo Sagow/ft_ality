@@ -16,6 +16,7 @@ module type MAP = sig
   val empty : t
   val merge : pair_t list -> t -> t
   val add : key_t -> value_t -> t -> t
+  val replace : key_t -> value_t -> t -> t
   val find_opt : t -> key_t -> value_t option
   val contains : t -> key_t -> bool
   val iter : (pair_t -> unit) -> t -> unit
@@ -66,6 +67,26 @@ module Make : MAKE =
       (map : t)
       : t =
       List.merge cmp map [(key, value)]
+
+    let replace
+      (key : key_t)
+      (value : value_t)
+      (map : t)
+      : t =
+      let rec loop
+        (lst : pair_t list)
+        (acc : pair_t list)
+        : t =
+        match lst with
+        | head :: tail -> begin
+          match KV.cmp key (fst head) with
+          | x when x > 0 -> loop tail (head :: acc)
+          | x when x < 0 -> failwith "Map.replace: key not found.\n"
+          | _ -> (List.rev ((key, value) :: acc)) @ tail
+        end
+        | [] -> failwith "Map.replace: key not found.\n"
+      in
+      loop (to_list map) []
 
     let find_opt
       (map : t)
