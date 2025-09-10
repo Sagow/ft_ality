@@ -1,3 +1,10 @@
+let find_index f lst =
+  let rec loop i = function
+    | [] -> None
+    | head :: tail -> if f head then Some i else loop (i + 1) tail
+  in
+  loop 0 lst
+
 let rec get_moves (s : string) : Utils.move list =
   let split = (String.trim s |> String.split_on_char ' ' |> List.map String.trim) in
   let res = List.map Utils.string_to_move split in
@@ -9,7 +16,7 @@ let rec get_moves (s : string) : Utils.move list =
         | [] -> ()
       in
       print_res res;
-      let i = List.find_index (fun (x : Utils.move) -> x = Utils.None) res in
+      let i = find_index (fun (x : Utils.move) -> x = Utils.None) res in
       failwith ("invalid move in " ^ s ^ " index " ^ (string_of_int (Option.get i)))
     end
   else if List.length res = 0 then failwith "Combos must contain at least one move"
