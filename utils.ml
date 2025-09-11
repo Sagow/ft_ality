@@ -1,20 +1,23 @@
-type key = BACKSPACE | None | TAB | RETURN | SPACE | EXCLAIM | QUOTEDBL | HASH | DOLLAR | PERCENT | AMPERSAND | QUOTE | LEFTPAREN | RIGHTPAREN | ASTERISK | PLUS | COMMA | MINUS | PERIOD | SLASH |  K0 |  K1 |  K2 |  K3 |  K4 |  K5 |  K6 |  K7 |  K8 |  K9 | COLON | SEMICOLON | LESS | EQUALS | GREATER | QUESTION | AT | LEFTBRACKET | BACKSLASH |  RIGHTBRACKET | CARET | UNDERSCORE | BACKQUOTE | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 | INSERT | HOME | PAGEUP | DELETE | END | PAGEDOWN | RIGHT | LEFT | DOWN | UP | KP_DIVIDE | KP_MULTIPLY | KP_MINUS | KP_PLUS | KP_ENTER | KP_1 | KP_2 | KP_3 | KP_4 | KP_5 | KP_6 | KP_7 | KP_8 | KP_9 | KP_0
-type move = Block | Down | FlipStance | Left | Right | Tag | Throw | Up | BK | BP | FK | FP | None
+type key = Tsdl.Sdl.keycode
+type move = Block | Down | FlipStance | Left | Right | Tag | Throw | Up | BK | BP | FK | FP
+
+let all_moves = [Block; Down; FlipStance; Left; Right; Tag; Throw; Up; BK; BP; FK; FP]
+
 let string_to_move (s : string) : move =
   match s with 
-  | x when s = "Block" -> Block
-  | x when s = "Down" -> Down
-  | x when s = "FlipStance" -> FlipStance
-  | x when s = "Left" -> Left
-  | x when s = "Right" -> Right
-  | x when s = "Tag" -> Tag
-  | x when s = "Throw" -> Throw
-  | x when s = "Up" -> Up
-  | x when s = "[BK]" -> BK
-  | x when s = "[BP]" -> BP
-  | x when s = "[FK]" -> FK
-  | x when s = "[FP]" -> FP
-  | _ -> None
+  | x when x = "Block" -> Block
+  | x when x = "Down" -> Down
+  | x when x = "FlipStance" -> FlipStance
+  | x when x = "Left" -> Left
+  | x when x = "Right" -> Right
+  | x when x = "Tag" -> Tag
+  | x when x = "Throw" -> Throw
+  | x when x = "Up" -> Up
+  | x when x = "[BK]" -> BK
+  | x when x = "[BP]" -> BP
+  | x when x = "[FK]" -> FK
+  | x when x = "[FP]" -> FP
+  | x -> failwith (x ^ " is not a valid move !")
 
 let move_to_string (m : move) : string =
   match m with
@@ -30,12 +33,10 @@ let move_to_string (m : move) : string =
   | BP -> "BP"
   | FK -> "FK"
   | FP -> "FP"
-  | _ -> "none"
 
-let key_to_string (k : Tsdl.Sdl.keycode) : string =
+let key_to_string (k : key) : string =
   match k with
   | x when x = Tsdl.Sdl.K.backspace -> "Backspace"
-  | x when x = Tsdl.Sdl.K.unknown -> "Unknown"
   | x when x = Tsdl.Sdl.K.tab -> "Tab"
   | x when x = Tsdl.Sdl.K.return -> "Return"
   | x when x = Tsdl.Sdl.K.space -> "Space"
@@ -142,10 +143,9 @@ let key_to_string (k : Tsdl.Sdl.keycode) : string =
   | x when x = Tsdl.Sdl.K.kp_0 -> "Kp_0"
   | _ -> "Unknown"
 
-let string_to_key (str : string) : Tsdl.Sdl.keycode =
+let string_to_key (str : string) : key =
   match str with
   | "Backspace" -> Tsdl.Sdl.K.backspace
-  | "Unknown" -> Tsdl.Sdl.K.unknown
   | "Tab" -> Tsdl.Sdl.K.tab
   | "Return" -> Tsdl.Sdl.K.return
   | "Space" -> Tsdl.Sdl.K.space
@@ -250,7 +250,7 @@ let string_to_key (str : string) : Tsdl.Sdl.keycode =
   | "Kp_8" -> Tsdl.Sdl.K.kp_8
   | "Kp_9" -> Tsdl.Sdl.K.kp_9
   | "Kp_0" -> Tsdl.Sdl.K.kp_0
-  | _ -> Tsdl.Sdl.K.unknown
+  | _ -> failwith (str ^ " is not a valid key input !")
 
 let rec test_print_list (l : string list) =
   match l with
