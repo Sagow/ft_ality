@@ -10,10 +10,7 @@ let rec find_key_mapping (l : string list) : (Utils.move * Utils.key) list =
       let first_word (s : string) : string =
         String.split_on_char ' ' s |> List.hd
       in
-      let k = Utils.string_to_key (first_word s) in 
-      match k with
-      | Utils.None -> failwith ("the key wasn't recognized : " ^ (first_word s))
-      | _ -> k
+      Utils.string_to_key (first_word s)
     in
     let last_word (s: string) : string =
       let rec get_last (l : string list) : string =
@@ -32,8 +29,7 @@ let rec find_key_mapping (l : string list) : (Utils.move * Utils.key) list =
       else
         begin
         let m = last_word h |> Utils.string_to_move in
-        if m = Utils.None then map_key t
-        else (m, recognize_key h)::(map_key t)
+        (m, recognize_key h)::(map_key t)
         end
     end
     | [] -> []
