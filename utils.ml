@@ -1,6 +1,5 @@
+type key = BACKSPACE | None | TAB | RETURN | SPACE | EXCLAIM | QUOTEDBL | HASH | DOLLAR | PERCENT | AMPERSAND | QUOTE | LEFTPAREN | RIGHTPAREN | ASTERISK | PLUS | COMMA | MINUS | PERIOD | SLASH |  K0 |  K1 |  K2 |  K3 |  K4 |  K5 |  K6 |  K7 |  K8 |  K9 | COLON | SEMICOLON | LESS | EQUALS | GREATER | QUESTION | AT | LEFTBRACKET | BACKSLASH |  RIGHTBRACKET | CARET | UNDERSCORE | BACKQUOTE | A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z |  F1 |  F2 |  F3 |  F4 |  F5 |  F6 |  F7 |  F8 |  F9 | F10 | F11 | F12 | INSERT | HOME | PAGEUP | DELETE | END | PAGEDOWN | RIGHT | LEFT | DOWN | UP | KP_DIVIDE | KP_MULTIPLY | KP_MINUS | KP_PLUS | KP_ENTER | KP_1 | KP_2 | KP_3 | KP_4 | KP_5 | KP_6 | KP_7 | KP_8 | KP_9 | KP_0
 type move = Block | Down | FlipStance | Left | Right | Tag | Throw | Up | BK | BP | FK | FP | None
-type key = SDLK_BACKSPACE | SDLK_TAB | SDLK_CLEAR | SDLK_RETURN | SDLK_PAUSE | SDLK_ESCAPE | SDLK_SPACE | SDLK_EXCLAIM | SDLK_QUOTEDBL | SDLK_HASH | SDLK_DOLLAR | SDLK_AMPERSAND | SDLK_QUOTE | SDLK_LEFTPAREN | SDLK_RIGHTPAREN | SDLK_ASTERISK | SDLK_PLUS | SDLK_COMMA | SDLK_MINUS | SDLK_PERIOD | SDLK_SLASH | SDLK_0 | SDLK_1 | SDLK_2 | SDLK_3 | SDLK_4 | SDLK_5 | SDLK_6 | SDLK_7 | SDLK_8 | SDLK_9 | SDLK_COLON | SDLK_SEMICOLON | SDLK_LESS | SDLK_EQUALS | SDLK_GREATER | SDLK_QUESTION | SDLK_AT | SDLK_LEFTBRACKET | SDLK_BACKSLASH | SDLK_RIGHTBRACKET | SDLK_CARET | SDLK_UNDERSCORE | SDLK_BACKQUOTE | SDLK_a | SDLK_b | SDLK_c | SDLK_d | SDLK_e | SDLK_f | SDLK_g | SDLK_h | SDLK_i | SDLK_j | SDLK_k | SDLK_l | SDLK_m | SDLK_n | SDLK_o | SDLK_p | SDLK_q | SDLK_r | SDLK_s | SDLK_t | SDLK_u | SDLK_v | SDLK_w | SDLK_x | SDLK_y | SDLK_z | SDLK_DELETE | SDLK_KP0 | SDLK_KP1 | SDLK_KP2 | SDLK_KP3 | SDLK_KP4 | SDLK_KP5 | SDLK_KP6 | SDLK_KP7 | SDLK_KP8 | SDLK_KP9 | SDLK_KP_PERIOD | SDLK_KP_DIVIDE | SDLK_KP_MULTIPLY | SDLK_KP_MINUS | SDLK_KP_PLUS | SDLK_KP_ENTER | SDLK_KP_EQUALS | SDLK_UP | SDLK_DOWN | SDLK_RIGHT | SDLK_LEFT | SDLK_INSERT | SDLK_HOME | SDLK_END | SDLK_PAGEUP | SDLK_PAGEDOWN | SDLK_F1 | SDLK_F2 | SDLK_F3 | SDLK_F4 | SDLK_F5 | SDLK_F6 | SDLK_F7 | SDLK_F8 | SDLK_F9 | SDLK_F10 | SDLK_F11 | SDLK_F12 | SDLK_F13 | SDLK_F14 | SDLK_F15 | SDLK_NUMLOCK | SDLK_CAPSLOCK | SDLK_SCROLLOCK | SDLK_RSHIFT | SDLK_LSHIFT | SDLK_RCTRL | SDLK_LCTRL | SDLK_RALT | SDLK_LALT | SDLK_RMETA | SDLK_LMETA | SDLK_LSUPER | SDLK_RSUPER | SDLK_MODE | SDLK_HELP | SDLK_PRINT | SDLK_SYSREQ | SDLK_BREAK | SDLK_MENU | SDLK_POWER | SDLK_EURO | None
-
 let string_to_move (s : string) : move =
   match s with 
   | x when s = "Block" -> Block
@@ -35,276 +34,276 @@ let move_to_string (m : move) : string =
 
 let string_to_key(s : string) : key =
   match s with 
-  | x when s = "BACKSPACE" -> SDLK_BACKSPACE
-  | x when s = "TAB" -> SDLK_TAB
-  | x when s = "CLEAR" -> SDLK_CLEAR
-  | x when s = "RETURN" -> SDLK_RETURN
-  | x when s = "PAUSE" -> SDLK_PAUSE
-  | x when s = "ESCAPE" -> SDLK_ESCAPE
-  | x when s = "SPACE" -> SDLK_SPACE
-  | x when s = "EXCLAIM" -> SDLK_EXCLAIM
-  | x when s = "QUOTEDBL" -> SDLK_QUOTEDBL
-  | x when s = "HASH" -> SDLK_HASH
-  | x when s = "DOLLAR" -> SDLK_DOLLAR
-  | x when s = "AMPERSAND" -> SDLK_AMPERSAND
-  | x when s = "QUOTE" -> SDLK_QUOTE
-  | x when s = "LEFTPAREN" -> SDLK_LEFTPAREN
-  | x when s = "RIGHTPAREN" -> SDLK_RIGHTPAREN
-  | x when s = "ASTERISK" -> SDLK_ASTERISK
-  | x when s = "PLUS" -> SDLK_PLUS
-  | x when s = "COMMA" -> SDLK_COMMA
-  | x when s = "MINUS" -> SDLK_MINUS
-  | x when s = "PERIOD" -> SDLK_PERIOD
-  | x when s = "SLASH" -> SDLK_SLASH
-  | x when s = "0" -> SDLK_0
-  | x when s = "1" -> SDLK_1
-  | x when s = "2" -> SDLK_2
-  | x when s = "3" -> SDLK_3
-  | x when s = "4" -> SDLK_4
-  | x when s = "5" -> SDLK_5
-  | x when s = "6" -> SDLK_6
-  | x when s = "7" -> SDLK_7
-  | x when s = "8" -> SDLK_8
-  | x when s = "9" -> SDLK_9
-  | x when s = "COLON" -> SDLK_COLON
-  | x when s = "SEMICOLON" -> SDLK_SEMICOLON
-  | x when s = "LESS" -> SDLK_LESS
-  | x when s = "EQUALS" -> SDLK_EQUALS
-  | x when s = "GREATER" -> SDLK_GREATER
-  | x when s = "QUESTION" -> SDLK_QUESTION
-  | x when s = "AT" -> SDLK_AT
-  | x when s = "LEFTBRACKET" -> SDLK_LEFTBRACKET
-  | x when s = "BACKSLASH" -> SDLK_BACKSLASH
-  | x when s = "RIGHTBRACKET" -> SDLK_RIGHTBRACKET
-  | x when s = "CARET" -> SDLK_CARET
-  | x when s = "UNDERSCORE" -> SDLK_UNDERSCORE
-  | x when s = "BACKQUOTE" -> SDLK_BACKQUOTE
-  | x when s = "a" -> SDLK_a
-  | x when s = "b" -> SDLK_b
-  | x when s = "c" -> SDLK_c
-  | x when s = "d" -> SDLK_d
-  | x when s = "e" -> SDLK_e
-  | x when s = "f" -> SDLK_f
-  | x when s = "g" -> SDLK_g
-  | x when s = "h" -> SDLK_h
-  | x when s = "i" -> SDLK_i
-  | x when s = "j" -> SDLK_j
-  | x when s = "k" -> SDLK_k
-  | x when s = "l" -> SDLK_l
-  | x when s = "m" -> SDLK_m
-  | x when s = "n" -> SDLK_n
-  | x when s = "o" -> SDLK_o
-  | x when s = "p" -> SDLK_p
-  | x when s = "q" -> SDLK_q
-  | x when s = "r" -> SDLK_r
-  | x when s = "s" -> SDLK_s
-  | x when s = "t" -> SDLK_t
-  | x when s = "u" -> SDLK_u
-  | x when s = "v" -> SDLK_v
-  | x when s = "w" -> SDLK_w
-  | x when s = "x" -> SDLK_x
-  | x when s = "y" -> SDLK_y
-  | x when s = "z" -> SDLK_z
-  | x when s = "DELETE" -> SDLK_DELETE
-  | x when s = "KP0" -> SDLK_KP0
-  | x when s = "KP1" -> SDLK_KP1
-  | x when s = "KP2" -> SDLK_KP2
-  | x when s = "KP3" -> SDLK_KP3
-  | x when s = "KP4" -> SDLK_KP4
-  | x when s = "KP5" -> SDLK_KP5
-  | x when s = "KP6" -> SDLK_KP6
-  | x when s = "KP7" -> SDLK_KP7
-  | x when s = "KP8" -> SDLK_KP8
-  | x when s = "KP9" -> SDLK_KP9
-  | x when s = "KP_PERIOD" -> SDLK_KP_PERIOD
-  | x when s = "KP_DIVIDE" -> SDLK_KP_DIVIDE
-  | x when s = "KP_MULTIPLY" -> SDLK_KP_MULTIPLY
-  | x when s = "KP_MINUS" -> SDLK_KP_MINUS
-  | x when s = "KP_PLUS" -> SDLK_KP_PLUS
-  | x when s = "KP_ENTER" -> SDLK_KP_ENTER
-  | x when s = "KP_EQUALS" -> SDLK_KP_EQUALS
-  | x when s = "UP" -> SDLK_UP
-  | x when s = "DOWN" -> SDLK_DOWN
-  | x when s = "RIGHT" -> SDLK_RIGHT
-  | x when s = "LEFT" -> SDLK_LEFT
-  | x when s = "INSERT" -> SDLK_INSERT
-  | x when s = "HOME" -> SDLK_HOME
-  | x when s = "END" -> SDLK_END
-  | x when s = "PAGEUP" -> SDLK_PAGEUP
-  | x when s = "PAGEDOWN" -> SDLK_PAGEDOWN
-  | x when s = "F1" -> SDLK_F1
-  | x when s = "F2" -> SDLK_F2
-  | x when s = "F3" -> SDLK_F3
-  | x when s = "F4" -> SDLK_F4
-  | x when s = "F5" -> SDLK_F5
-  | x when s = "F6" -> SDLK_F6
-  | x when s = "F7" -> SDLK_F7
-  | x when s = "F8" -> SDLK_F8
-  | x when s = "F9" -> SDLK_F9
-  | x when s = "F10" -> SDLK_F10
-  | x when s = "F11" -> SDLK_F11
-  | x when s = "F12" -> SDLK_F12
-  | x when s = "F13" -> SDLK_F13
-  | x when s = "F14" -> SDLK_F14
-  | x when s = "F15" -> SDLK_F15
-  | x when s = "NUMLOCK" -> SDLK_NUMLOCK
-  | x when s = "CAPSLOCK" -> SDLK_CAPSLOCK
-  | x when s = "SCROLLOCK" -> SDLK_SCROLLOCK
-  | x when s = "RSHIFT" -> SDLK_RSHIFT
-  | x when s = "LSHIFT" -> SDLK_LSHIFT
-  | x when s = "RCTRL" -> SDLK_RCTRL
-  | x when s = "LCTRL" -> SDLK_LCTRL
-  | x when s = "RALT" -> SDLK_RALT
-  | x when s = "LALT" -> SDLK_LALT
-  | x when s = "RMETA" -> SDLK_RMETA
-  | x when s = "LMETA" -> SDLK_LMETA
-  | x when s = "LSUPER" -> SDLK_LSUPER
-  | x when s = "RSUPER" -> SDLK_RSUPER
-  | x when s = "MODE" -> SDLK_MODE
-  | x when s = "HELP" -> SDLK_HELP
-  | x when s = "PRINT" -> SDLK_PRINT
-  | x when s = "SYSREQ" -> SDLK_SYSREQ
-  | x when s = "BREAK" -> SDLK_BREAK
-  | x when s = "MENU" -> SDLK_MENU
-  | x when s = "POWER" -> SDLK_POWER
-  | x when s = "EURO" -> SDLK_EURO
+  | x when s = "BACKSPACE" -> BACKSPACE
+  | x when s = "TAB" -> TAB
+  | x when s = "CLEAR" -> CLEAR
+  | x when s = "RETURN" -> RETURN
+  | x when s = "PAUSE" -> PAUSE
+  | x when s = "ESCAPE" -> ESCAPE
+  | x when s = "SPACE" -> SPACE
+  | x when s = "EXCLAIM" -> EXCLAIM
+  | x when s = "QUOTEDBL" -> QUOTEDBL
+  | x when s = "HASH" -> HASH
+  | x when s = "DOLLAR" -> DOLLAR
+  | x when s = "AMPERSAND" -> AMPERSAND
+  | x when s = "QUOTE" -> QUOTE
+  | x when s = "LEFTPAREN" -> LEFTPAREN
+  | x when s = "RIGHTPAREN" -> RIGHTPAREN
+  | x when s = "ASTERISK" -> ASTERISK
+  | x when s = "PLUS" -> PLUS
+  | x when s = "COMMA" -> COMMA
+  | x when s = "MINUS" -> MINUS
+  | x when s = "PERIOD" -> PERIOD
+  | x when s = "SLASH" -> SLASH
+  | x when s = "0" -> K0
+  | x when s = "1" -> K1
+  | x when s = "2" -> K2
+  | x when s = "3" -> K3
+  | x when s = "4" -> K4
+  | x when s = "5" -> K5
+  | x when s = "6" -> K6
+  | x when s = "7" -> K7
+  | x when s = "8" -> K8
+  | x when s = "9" -> K9
+  | x when s = "COLON" -> COLON
+  | x when s = "SEMICOLON" -> SEMICOLON
+  | x when s = "LESS" -> LESS
+  | x when s = "EQUALS" -> EQUALS
+  | x when s = "GREATER" -> GREATER
+  | x when s = "QUESTION" -> QUESTION
+  | x when s = "AT" -> AT
+  | x when s = "LEFTBRACKET" -> LEFTBRACKET
+  | x when s = "BACKSLASH" -> BACKSLASH
+  | x when s = "RIGHTBRACKET" -> RIGHTBRACKET
+  | x when s = "CARET" -> CARET
+  | x when s = "UNDERSCORE" -> UNDERSCORE
+  | x when s = "BACKQUOTE" -> BACKQUOTE
+  | x when s = "a" -> A
+  | x when s = "b" -> B
+  | x when s = "c" -> C
+  | x when s = "d" -> D
+  | x when s = "e" -> E
+  | x when s = "f" -> F
+  | x when s = "g" -> G
+  | x when s = "h" -> H
+  | x when s = "i" -> I
+  | x when s = "j" -> J
+  | x when s = "k" -> K
+  | x when s = "l" -> J
+  | x when s = "m" -> M
+  | x when s = "n" -> N
+  | x when s = "o" -> O
+  | x when s = "p" -> P
+  | x when s = "q" -> Q
+  | x when s = "r" -> R
+  | x when s = "s" -> S
+  | x when s = "t" -> T
+  | x when s = "u" -> U
+  | x when s = "v" -> V
+  | x when s = "w" -> W
+  | x when s = "x" -> X
+  | x when s = "y" -> Y
+  | x when s = "z" -> Z
+  | x when s = "DELETE" -> DELETE
+  | x when s = "KP0" -> KP0
+  | x when s = "KP1" -> KP1
+  | x when s = "KP2" -> KP2
+  | x when s = "KP3" -> KP3
+  | x when s = "KP4" -> KP4
+  | x when s = "KP5" -> KP5
+  | x when s = "KP6" -> KP6
+  | x when s = "KP7" -> KP7
+  | x when s = "KP8" -> KP8
+  | x when s = "KP9" -> KP9
+  | x when s = "KP_PERIOD" -> KP_PERIOD
+  | x when s = "KP_DIVIDE" -> KP_DIVIDE
+  | x when s = "KP_MULTIPLY" -> KP_MULTIPLY
+  | x when s = "KP_MINUS" -> KP_MINUS
+  | x when s = "KP_PLUS" -> KP_PLUS
+  | x when s = "KP_ENTER" -> KP_ENTER
+  | x when s = "KP_EQUALS" -> KP_EQUALS
+  | x when s = "UP" -> UP
+  | x when s = "DOWN" -> DOWN
+  | x when s = "RIGHT" -> RIGHT
+  | x when s = "LEFT" -> LEFT
+  | x when s = "INSERT" -> INSERT
+  | x when s = "HOME" -> HOME
+  | x when s = "END" -> END
+  | x when s = "PAGEUP" -> PAGEUP
+  | x when s = "PAGEDOWN" -> PAGEDOWN
+  | x when s = "F1" -> F1
+  | x when s = "F2" -> F2
+  | x when s = "F3" -> F3
+  | x when s = "F4" -> F4
+  | x when s = "F5" -> F5
+  | x when s = "F6" -> F6
+  | x when s = "F7" -> F7
+  | x when s = "F8" -> F8
+  | x when s = "F9" -> F9
+  | x when s = "F10" -> F10
+  | x when s = "F11" -> F11
+  | x when s = "F12" -> F12
+  | x when s = "F13" -> F13
+  | x when s = "F14" -> F14
+  | x when s = "F15" -> F15
+  | x when s = "NUMLOCK" -> NUMLOCK
+  | x when s = "CAPSLOCK" -> CAPSLOCK
+  | x when s = "SCROLLOCK" -> SCROLLOCK
+  | x when s = "RSHIFT" -> RSHIFT
+  | x when s = "LSHIFT" -> LSHIFT
+  | x when s = "RCTRL" -> RCTRL
+  | x when s = "LCTRL" -> LCTRL
+  | x when s = "RALT" -> RALT
+  | x when s = "LALT" -> LALT
+  | x when s = "RMETA" -> RMETA
+  | x when s = "LMETA" -> LMETA
+  | x when s = "LSUPER" -> LSUPER
+  | x when s = "RSUPER" -> RSUPER
+  | x when s = "MODE" -> MODE
+  | x when s = "HELP" -> HELP
+  | x when s = "PRINT" -> PRINT
+  | x when s = "SYSREQ" -> SYSREQ
+  | x when s = "BREAK" -> BREAK
+  | x when s = "MENU" -> MENU
+  | x when s = "POWER" -> POWER
+  | x when s = "EURO" -> EURO
   | _ -> None
 
 let key_to_string (k : key) : string =
   match k with
-  | SDLK_BACKSPACE -> "backspace"
-  | SDLK_TAB -> "tab"
-  | SDLK_CLEAR -> "clear"
-  | SDLK_RETURN -> "return"
-  | SDLK_PAUSE -> "pause"
-  | SDLK_ESCAPE -> "escape"
-  | SDLK_SPACE -> "space"
-  | SDLK_EXCLAIM -> "exclaim"
-  | SDLK_QUOTEDBL -> "quotedbl"
-  | SDLK_HASH -> "hash"
-  | SDLK_DOLLAR -> "dollar"
-  | SDLK_AMPERSAND -> "ampersand"
-  | SDLK_QUOTE -> "quote"
-  | SDLK_LEFTPAREN -> "leftparen"
-  | SDLK_RIGHTPAREN -> "rightparen"
-  | SDLK_ASTERISK -> "asterisk"
-  | SDLK_PLUS -> "plus"
-  | SDLK_COMMA -> "comma"
-  | SDLK_MINUS -> "minus"
-  | SDLK_PERIOD -> "period"
-  | SDLK_SLASH -> "slash"
-  | SDLK_0 -> "0"
-  | SDLK_1 -> "1"
-  | SDLK_2 -> "2"
-  | SDLK_3 -> "3"
-  | SDLK_4 -> "4"
-  | SDLK_5 -> "5"
-  | SDLK_6 -> "6"
-  | SDLK_7 -> "7"
-  | SDLK_8 -> "8"
-  | SDLK_9 -> "9"
-  | SDLK_COLON -> "colon"
-  | SDLK_SEMICOLON -> "semicolon"
-  | SDLK_LESS -> "less"
-  | SDLK_EQUALS -> "equals"
-  | SDLK_GREATER -> "greater"
-  | SDLK_QUESTION -> "question"
-  | SDLK_AT -> "at"
-  | SDLK_LEFTBRACKET -> "leftbracket"
-  | SDLK_BACKSLASH -> "backslash"
-  | SDLK_RIGHTBRACKET -> "rightbracket"
-  | SDLK_CARET -> "caret"
-  | SDLK_UNDERSCORE -> "underscore"
-  | SDLK_BACKQUOTE -> "backquote"
-  | SDLK_a -> "a"
-  | SDLK_b -> "b"
-  | SDLK_c -> "c"
-  | SDLK_d -> "d"
-  | SDLK_e -> "e"
-  | SDLK_f -> "f"
-  | SDLK_g -> "g"
-  | SDLK_h -> "h"
-  | SDLK_i -> "i"
-  | SDLK_j -> "j"
-  | SDLK_k -> "k"
-  | SDLK_l -> "l"
-  | SDLK_m -> "m"
-  | SDLK_n -> "n"
-  | SDLK_o -> "o"
-  | SDLK_p -> "p"
-  | SDLK_q -> "q"
-  | SDLK_r -> "r"
-  | SDLK_s -> "s"
-  | SDLK_t -> "t"
-  | SDLK_u -> "u"
-  | SDLK_v -> "v"
-  | SDLK_w -> "w"
-  | SDLK_x -> "x"
-  | SDLK_y -> "y"
-  | SDLK_z -> "z"
-  | SDLK_DELETE -> "delete"
-  | SDLK_KP0 -> "kp0"
-  | SDLK_KP1 -> "kp1"
-  | SDLK_KP2 -> "kp2"
-  | SDLK_KP3 -> "kp3"
-  | SDLK_KP4 -> "kp4"
-  | SDLK_KP5 -> "kp5"
-  | SDLK_KP6 -> "kp6"
-  | SDLK_KP7 -> "kp7"
-  | SDLK_KP8 -> "kp8"
-  | SDLK_KP9 -> "kp9"
-  | SDLK_KP_PERIOD -> "kp_period"
-  | SDLK_KP_DIVIDE -> "kp_divide"
-  | SDLK_KP_MULTIPLY -> "kp_multiply"
-  | SDLK_KP_MINUS -> "kp_minus"
-  | SDLK_KP_PLUS -> "kp_plus"
-  | SDLK_KP_ENTER -> "kp_enter"
-  | SDLK_KP_EQUALS -> "kp_equals"
-  | SDLK_UP -> "up"
-  | SDLK_DOWN -> "down"
-  | SDLK_RIGHT -> "right"
-  | SDLK_LEFT -> "left"
-  | SDLK_INSERT -> "insert"
-  | SDLK_HOME -> "home"
-  | SDLK_END -> "end"
-  | SDLK_PAGEUP -> "pageup"
-  | SDLK_PAGEDOWN -> "pagedown"
-  | SDLK_F1 -> "f1"
-  | SDLK_F2 -> "f2"
-  | SDLK_F3 -> "f3"
-  | SDLK_F4 -> "f4"
-  | SDLK_F5 -> "f5"
-  | SDLK_F6 -> "f6"
-  | SDLK_F7 -> "f7"
-  | SDLK_F8 -> "f8"
-  | SDLK_F9 -> "f9"
-  | SDLK_F10 -> "f10"
-  | SDLK_F11 -> "f11"
-  | SDLK_F12 -> "f12"
-  | SDLK_F13 -> "f13"
-  | SDLK_F14 -> "f14"
-  | SDLK_F15 -> "f15"
-  | SDLK_NUMLOCK -> "numlock"
-  | SDLK_CAPSLOCK -> "capslock"
-  | SDLK_SCROLLOCK -> "scrollock"
-  | SDLK_RSHIFT -> "rshift"
-  | SDLK_LSHIFT -> "lshift"
-  | SDLK_RCTRL -> "rctrl"
-  | SDLK_LCTRL -> "lctrl"
-  | SDLK_RALT -> "ralt"
-  | SDLK_LALT -> "lalt"
-  | SDLK_RMETA -> "rmeta"
-  | SDLK_LMETA -> "lmeta"
-  | SDLK_LSUPER -> "lsuper"
-  | SDLK_RSUPER -> "rsuper"
-  | SDLK_MODE -> "mode"
-  | SDLK_HELP -> "help"
-  | SDLK_PRINT -> "print"
-  | SDLK_SYSREQ -> "sysreq"
-  | SDLK_BREAK -> "break"
-  | SDLK_MENU -> "menu"
-  | SDLK_POWER -> "power"
-  | SDLK_EURO -> "euro"
+  | BACKSPACE -> "backspace"
+  | TAB -> "tab"
+  | CLEAR -> "clear"
+  | RETURN -> "return"
+  | PAUSE -> "pause"
+  | ESCAPE -> "escape"
+  | SPACE -> "space"
+  | EXCLAIM -> "exclaim"
+  | QUOTEDBL -> "quotedbl"
+  | HASH -> "hash"
+  | DOLLAR -> "dollar"
+  | AMPERSAND -> "ampersand"
+  | QUOTE -> "quote"
+  | LEFTPAREN -> "leftparen"
+  | RIGHTPAREN -> "rightparen"
+  | ASTERISK -> "asterisk"
+  | PLUS -> "plus"
+  | COMMA -> "comma"
+  | MINUS -> "minus"
+  | PERIOD -> "period"
+  | SLASH -> "slash"
+  | K0 -> "0"
+  | K1 -> "1"
+  | K2 -> "2"
+  | K3 -> "3"
+  | K4 -> "4"
+  | K5 -> "5"
+  | K6 -> "6"
+  | K7 -> "7"
+  | K8 -> "8"
+  | K9 -> "9"
+  | COLON -> "colon"
+  | SEMICOLON -> "semicolon"
+  | LESS -> "less"
+  | EQUALS -> "equals"
+  | GREATER -> "greater"
+  | QUESTION -> "question"
+  | AT -> "at"
+  | LEFTBRACKET -> "leftbracket"
+  | BACKSLASH -> "backslash"
+  | RIGHTBRACKET -> "rightbracket"
+  | CARET -> "caret"
+  | UNDERSCORE -> "underscore"
+  | BACKQUOTE -> "backquote"
+  | A -> "a"
+  | B -> "b"
+  | C -> "c"
+  | D -> "d"
+  | E -> "e"
+  | F -> "f"
+  | G -> "g"
+  | H -> "h"
+  | I -> "i"
+  | J -> "j"
+  | K -> "k"
+  | L -> "l"
+  | M -> "m"
+  | N -> "n"
+  | O -> "o"
+  | P -> "p"
+  | Q -> "q"
+  | R -> "r"
+  | S -> "s"
+  | T -> "t"
+  | U -> "u"
+  | V -> "v"
+  | W -> "w"
+  | X -> "x"
+  | Y -> "y"
+  | Z -> "z"
+  | DELETE -> "delete"
+  | KP0 -> "kp0"
+  | KP1 -> "kp1"
+  | KP2 -> "kp2"
+  | KP3 -> "kp3"
+  | KP4 -> "kp4"
+  | KP5 -> "kp5"
+  | KP6 -> "kp6"
+  | KP7 -> "kp7"
+  | KP8 -> "kp8"
+  | KP9 -> "kp9"
+  | KP_PERIOD -> "kp_period"
+  | KP_DIVIDE -> "kp_divide"
+  | KP_MULTIPLY -> "kp_multiply"
+  | KP_MINUS -> "kp_minus"
+  | KP_PLUS -> "kp_plus"
+  | KP_ENTER -> "kp_enter"
+  | KP_EQUALS -> "kp_equals"
+  | UP -> "up"
+  | DOWN -> "down"
+  | RIGHT -> "right"
+  | LEFT -> "left"
+  | INSERT -> "insert"
+  | HOME -> "home"
+  | END -> "end"
+  | PAGEUP -> "pageup"
+  | PAGEDOWN -> "pagedown"
+  | F1 -> "f1"
+  | F2 -> "f2"
+  | F3 -> "f3"
+  | F4 -> "f4"
+  | F5 -> "f5"
+  | F6 -> "f6"
+  | F7 -> "f7"
+  | F8 -> "f8"
+  | F9 -> "f9"
+  | F10 -> "f10"
+  | F11 -> "f11"
+  | F12 -> "f12"
+  | F13 -> "f13"
+  | F14 -> "f14"
+  | F15 -> "f15"
+  | NUMLOCK -> "numlock"
+  | CAPSLOCK -> "capslock"
+  | SCROLLOCK -> "scrollock"
+  | RSHIFT -> "rshift"
+  | LSHIFT -> "lshift"
+  | RCTRL -> "rctrl"
+  | LCTRL -> "lctrl"
+  | RALT -> "ralt"
+  | LALT -> "lalt"
+  | RMETA -> "rmeta"
+  | LMETA -> "lmeta"
+  | LSUPER -> "lsuper"
+  | RSUPER -> "rsuper"
+  | MODE -> "mode"
+  | HELP -> "help"
+  | PRINT -> "print"
+  | SYSREQ -> "sysreq"
+  | BREAK -> "break"
+  | MENU -> "menu"
+  | POWER -> "power"
+  | EURO -> "euro"
   | None -> "error"
 
 
