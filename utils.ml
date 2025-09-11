@@ -32,280 +32,225 @@ let move_to_string (m : move) : string =
   | FP -> "FP"
   | _ -> "none"
 
-let string_to_key(s : string) : key =
-  match s with 
-  | x when s = "BACKSPACE" -> BACKSPACE
-  | x when s = "TAB" -> TAB
-  | x when s = "CLEAR" -> CLEAR
-  | x when s = "RETURN" -> RETURN
-  | x when s = "PAUSE" -> PAUSE
-  | x when s = "ESCAPE" -> ESCAPE
-  | x when s = "SPACE" -> SPACE
-  | x when s = "EXCLAIM" -> EXCLAIM
-  | x when s = "QUOTEDBL" -> QUOTEDBL
-  | x when s = "HASH" -> HASH
-  | x when s = "DOLLAR" -> DOLLAR
-  | x when s = "AMPERSAND" -> AMPERSAND
-  | x when s = "QUOTE" -> QUOTE
-  | x when s = "LEFTPAREN" -> LEFTPAREN
-  | x when s = "RIGHTPAREN" -> RIGHTPAREN
-  | x when s = "ASTERISK" -> ASTERISK
-  | x when s = "PLUS" -> PLUS
-  | x when s = "COMMA" -> COMMA
-  | x when s = "MINUS" -> MINUS
-  | x when s = "PERIOD" -> PERIOD
-  | x when s = "SLASH" -> SLASH
-  | x when s = "0" -> K0
-  | x when s = "1" -> K1
-  | x when s = "2" -> K2
-  | x when s = "3" -> K3
-  | x when s = "4" -> K4
-  | x when s = "5" -> K5
-  | x when s = "6" -> K6
-  | x when s = "7" -> K7
-  | x when s = "8" -> K8
-  | x when s = "9" -> K9
-  | x when s = "COLON" -> COLON
-  | x when s = "SEMICOLON" -> SEMICOLON
-  | x when s = "LESS" -> LESS
-  | x when s = "EQUALS" -> EQUALS
-  | x when s = "GREATER" -> GREATER
-  | x when s = "QUESTION" -> QUESTION
-  | x when s = "AT" -> AT
-  | x when s = "LEFTBRACKET" -> LEFTBRACKET
-  | x when s = "BACKSLASH" -> BACKSLASH
-  | x when s = "RIGHTBRACKET" -> RIGHTBRACKET
-  | x when s = "CARET" -> CARET
-  | x when s = "UNDERSCORE" -> UNDERSCORE
-  | x when s = "BACKQUOTE" -> BACKQUOTE
-  | x when s = "a" -> A
-  | x when s = "b" -> B
-  | x when s = "c" -> C
-  | x when s = "d" -> D
-  | x when s = "e" -> E
-  | x when s = "f" -> F
-  | x when s = "g" -> G
-  | x when s = "h" -> H
-  | x when s = "i" -> I
-  | x when s = "j" -> J
-  | x when s = "k" -> K
-  | x when s = "l" -> J
-  | x when s = "m" -> M
-  | x when s = "n" -> N
-  | x when s = "o" -> O
-  | x when s = "p" -> P
-  | x when s = "q" -> Q
-  | x when s = "r" -> R
-  | x when s = "s" -> S
-  | x when s = "t" -> T
-  | x when s = "u" -> U
-  | x when s = "v" -> V
-  | x when s = "w" -> W
-  | x when s = "x" -> X
-  | x when s = "y" -> Y
-  | x when s = "z" -> Z
-  | x when s = "DELETE" -> DELETE
-  | x when s = "KP0" -> KP0
-  | x when s = "KP1" -> KP1
-  | x when s = "KP2" -> KP2
-  | x when s = "KP3" -> KP3
-  | x when s = "KP4" -> KP4
-  | x when s = "KP5" -> KP5
-  | x when s = "KP6" -> KP6
-  | x when s = "KP7" -> KP7
-  | x when s = "KP8" -> KP8
-  | x when s = "KP9" -> KP9
-  | x when s = "KP_PERIOD" -> KP_PERIOD
-  | x when s = "KP_DIVIDE" -> KP_DIVIDE
-  | x when s = "KP_MULTIPLY" -> KP_MULTIPLY
-  | x when s = "KP_MINUS" -> KP_MINUS
-  | x when s = "KP_PLUS" -> KP_PLUS
-  | x when s = "KP_ENTER" -> KP_ENTER
-  | x when s = "KP_EQUALS" -> KP_EQUALS
-  | x when s = "UP" -> UP
-  | x when s = "DOWN" -> DOWN
-  | x when s = "RIGHT" -> RIGHT
-  | x when s = "LEFT" -> LEFT
-  | x when s = "INSERT" -> INSERT
-  | x when s = "HOME" -> HOME
-  | x when s = "END" -> END
-  | x when s = "PAGEUP" -> PAGEUP
-  | x when s = "PAGEDOWN" -> PAGEDOWN
-  | x when s = "F1" -> F1
-  | x when s = "F2" -> F2
-  | x when s = "F3" -> F3
-  | x when s = "F4" -> F4
-  | x when s = "F5" -> F5
-  | x when s = "F6" -> F6
-  | x when s = "F7" -> F7
-  | x when s = "F8" -> F8
-  | x when s = "F9" -> F9
-  | x when s = "F10" -> F10
-  | x when s = "F11" -> F11
-  | x when s = "F12" -> F12
-  | x when s = "F13" -> F13
-  | x when s = "F14" -> F14
-  | x when s = "F15" -> F15
-  | x when s = "NUMLOCK" -> NUMLOCK
-  | x when s = "CAPSLOCK" -> CAPSLOCK
-  | x when s = "SCROLLOCK" -> SCROLLOCK
-  | x when s = "RSHIFT" -> RSHIFT
-  | x when s = "LSHIFT" -> LSHIFT
-  | x when s = "RCTRL" -> RCTRL
-  | x when s = "LCTRL" -> LCTRL
-  | x when s = "RALT" -> RALT
-  | x when s = "LALT" -> LALT
-  | x when s = "RMETA" -> RMETA
-  | x when s = "LMETA" -> LMETA
-  | x when s = "LSUPER" -> LSUPER
-  | x when s = "RSUPER" -> RSUPER
-  | x when s = "MODE" -> MODE
-  | x when s = "HELP" -> HELP
-  | x when s = "PRINT" -> PRINT
-  | x when s = "SYSREQ" -> SYSREQ
-  | x when s = "BREAK" -> BREAK
-  | x when s = "MENU" -> MENU
-  | x when s = "POWER" -> POWER
-  | x when s = "EURO" -> EURO
-  | _ -> None
-
-let key_to_string (k : key) : string =
+let key_to_string (k : Tsdl.Sdl.keycode) : string =
   match k with
-  | BACKSPACE -> "backspace"
-  | TAB -> "tab"
-  | CLEAR -> "clear"
-  | RETURN -> "return"
-  | PAUSE -> "pause"
-  | ESCAPE -> "escape"
-  | SPACE -> "space"
-  | EXCLAIM -> "exclaim"
-  | QUOTEDBL -> "quotedbl"
-  | HASH -> "hash"
-  | DOLLAR -> "dollar"
-  | AMPERSAND -> "ampersand"
-  | QUOTE -> "quote"
-  | LEFTPAREN -> "leftparen"
-  | RIGHTPAREN -> "rightparen"
-  | ASTERISK -> "asterisk"
-  | PLUS -> "plus"
-  | COMMA -> "comma"
-  | MINUS -> "minus"
-  | PERIOD -> "period"
-  | SLASH -> "slash"
-  | K0 -> "0"
-  | K1 -> "1"
-  | K2 -> "2"
-  | K3 -> "3"
-  | K4 -> "4"
-  | K5 -> "5"
-  | K6 -> "6"
-  | K7 -> "7"
-  | K8 -> "8"
-  | K9 -> "9"
-  | COLON -> "colon"
-  | SEMICOLON -> "semicolon"
-  | LESS -> "less"
-  | EQUALS -> "equals"
-  | GREATER -> "greater"
-  | QUESTION -> "question"
-  | AT -> "at"
-  | LEFTBRACKET -> "leftbracket"
-  | BACKSLASH -> "backslash"
-  | RIGHTBRACKET -> "rightbracket"
-  | CARET -> "caret"
-  | UNDERSCORE -> "underscore"
-  | BACKQUOTE -> "backquote"
-  | A -> "a"
-  | B -> "b"
-  | C -> "c"
-  | D -> "d"
-  | E -> "e"
-  | F -> "f"
-  | G -> "g"
-  | H -> "h"
-  | I -> "i"
-  | J -> "j"
-  | K -> "k"
-  | L -> "l"
-  | M -> "m"
-  | N -> "n"
-  | O -> "o"
-  | P -> "p"
-  | Q -> "q"
-  | R -> "r"
-  | S -> "s"
-  | T -> "t"
-  | U -> "u"
-  | V -> "v"
-  | W -> "w"
-  | X -> "x"
-  | Y -> "y"
-  | Z -> "z"
-  | DELETE -> "delete"
-  | KP0 -> "kp0"
-  | KP1 -> "kp1"
-  | KP2 -> "kp2"
-  | KP3 -> "kp3"
-  | KP4 -> "kp4"
-  | KP5 -> "kp5"
-  | KP6 -> "kp6"
-  | KP7 -> "kp7"
-  | KP8 -> "kp8"
-  | KP9 -> "kp9"
-  | KP_PERIOD -> "kp_period"
-  | KP_DIVIDE -> "kp_divide"
-  | KP_MULTIPLY -> "kp_multiply"
-  | KP_MINUS -> "kp_minus"
-  | KP_PLUS -> "kp_plus"
-  | KP_ENTER -> "kp_enter"
-  | KP_EQUALS -> "kp_equals"
-  | UP -> "up"
-  | DOWN -> "down"
-  | RIGHT -> "right"
-  | LEFT -> "left"
-  | INSERT -> "insert"
-  | HOME -> "home"
-  | END -> "end"
-  | PAGEUP -> "pageup"
-  | PAGEDOWN -> "pagedown"
-  | F1 -> "f1"
-  | F2 -> "f2"
-  | F3 -> "f3"
-  | F4 -> "f4"
-  | F5 -> "f5"
-  | F6 -> "f6"
-  | F7 -> "f7"
-  | F8 -> "f8"
-  | F9 -> "f9"
-  | F10 -> "f10"
-  | F11 -> "f11"
-  | F12 -> "f12"
-  | F13 -> "f13"
-  | F14 -> "f14"
-  | F15 -> "f15"
-  | NUMLOCK -> "numlock"
-  | CAPSLOCK -> "capslock"
-  | SCROLLOCK -> "scrollock"
-  | RSHIFT -> "rshift"
-  | LSHIFT -> "lshift"
-  | RCTRL -> "rctrl"
-  | LCTRL -> "lctrl"
-  | RALT -> "ralt"
-  | LALT -> "lalt"
-  | RMETA -> "rmeta"
-  | LMETA -> "lmeta"
-  | LSUPER -> "lsuper"
-  | RSUPER -> "rsuper"
-  | MODE -> "mode"
-  | HELP -> "help"
-  | PRINT -> "print"
-  | SYSREQ -> "sysreq"
-  | BREAK -> "break"
-  | MENU -> "menu"
-  | POWER -> "power"
-  | EURO -> "euro"
-  | None -> "error"
+  | x when x = Tsdl.Sdl.K.backspace -> "Backspace"
+  | x when x = Tsdl.Sdl.K.unknown -> "Unknown"
+  | x when x = Tsdl.Sdl.K.tab -> "Tab"
+  | x when x = Tsdl.Sdl.K.return -> "Return"
+  | x when x = Tsdl.Sdl.K.space -> "Space"
+  | x when x = Tsdl.Sdl.K.exclaim -> "Exclaim"
+  | x when x = Tsdl.Sdl.K.quotedbl -> "Quotedbl"
+  | x when x = Tsdl.Sdl.K.hash -> "Hash"
+  | x when x = Tsdl.Sdl.K.dollar -> "Dollar"
+  | x when x = Tsdl.Sdl.K.percent -> "Percent"
+  | x when x = Tsdl.Sdl.K.ampersand -> "Ampersand"
+  | x when x = Tsdl.Sdl.K.quote -> "Quote"
+  | x when x = Tsdl.Sdl.K.leftparen -> "Leftparen"
+  | x when x = Tsdl.Sdl.K.rightparen -> "Rightparen"
+  | x when x = Tsdl.Sdl.K.asterisk -> "Asterisk"
+  | x when x = Tsdl.Sdl.K.plus -> "Plus"
+  | x when x = Tsdl.Sdl.K.comma -> "Comma"
+  | x when x = Tsdl.Sdl.K.minus -> "Minus"
+  | x when x = Tsdl.Sdl.K.period -> "Period"
+  | x when x = Tsdl.Sdl.K.slash -> "Slash"
+  | x when x = Tsdl.Sdl.K.k0 -> "K0"
+  | x when x = Tsdl.Sdl.K.k1 -> "K1"
+  | x when x = Tsdl.Sdl.K.k2 -> "K2"
+  | x when x = Tsdl.Sdl.K.k3 -> "K3"
+  | x when x = Tsdl.Sdl.K.k4 -> "K4"
+  | x when x = Tsdl.Sdl.K.k5 -> "K5"
+  | x when x = Tsdl.Sdl.K.k6 -> "K6"
+  | x when x = Tsdl.Sdl.K.k7 -> "K7"
+  | x when x = Tsdl.Sdl.K.k8 -> "K8"
+  | x when x = Tsdl.Sdl.K.k9 -> "K9"
+  | x when x = Tsdl.Sdl.K.colon -> "Colon"
+  | x when x = Tsdl.Sdl.K.semicolon -> "Semicolon"
+  | x when x = Tsdl.Sdl.K.less -> "Less"
+  | x when x = Tsdl.Sdl.K.equals -> "Equals"
+  | x when x = Tsdl.Sdl.K.greater -> "Greater"
+  | x when x = Tsdl.Sdl.K.question -> "Question"
+  | x when x = Tsdl.Sdl.K.at -> "At"
+  | x when x = Tsdl.Sdl.K.leftbracket -> "Leftbracket"
+  | x when x = Tsdl.Sdl.K.backslash -> "Backslash"
+  | x when x = Tsdl.Sdl.K.rightbracket -> "Rightbracket"
+  | x when x = Tsdl.Sdl.K.caret -> "Caret"
+  | x when x = Tsdl.Sdl.K.underscore -> "Underscore"
+  | x when x = Tsdl.Sdl.K.backquote -> "Backquote"
+  | x when x = Tsdl.Sdl.K.a -> "A"
+  | x when x = Tsdl.Sdl.K.b -> "B"
+  | x when x = Tsdl.Sdl.K.c -> "C"
+  | x when x = Tsdl.Sdl.K.d -> "D"
+  | x when x = Tsdl.Sdl.K.e -> "E"
+  | x when x = Tsdl.Sdl.K.f -> "F"
+  | x when x = Tsdl.Sdl.K.g -> "G"
+  | x when x = Tsdl.Sdl.K.h -> "H"
+  | x when x = Tsdl.Sdl.K.i -> "I"
+  | x when x = Tsdl.Sdl.K.j -> "J"
+  | x when x = Tsdl.Sdl.K.k -> "K"
+  | x when x = Tsdl.Sdl.K.l -> "L"
+  | x when x = Tsdl.Sdl.K.m -> "M"
+  | x when x = Tsdl.Sdl.K.n -> "N"
+  | x when x = Tsdl.Sdl.K.o -> "O"
+  | x when x = Tsdl.Sdl.K.p -> "P"
+  | x when x = Tsdl.Sdl.K.q -> "Q"
+  | x when x = Tsdl.Sdl.K.r -> "R"
+  | x when x = Tsdl.Sdl.K.s -> "S"
+  | x when x = Tsdl.Sdl.K.t -> "T"
+  | x when x = Tsdl.Sdl.K.u -> "U"
+  | x when x = Tsdl.Sdl.K.v -> "V"
+  | x when x = Tsdl.Sdl.K.w -> "W"
+  | x when x = Tsdl.Sdl.K.x -> "X"
+  | x when x = Tsdl.Sdl.K.y -> "Y"
+  | x when x = Tsdl.Sdl.K.z -> "Z"
+  | x when x = Tsdl.Sdl.K.f1 -> "F1"
+  | x when x = Tsdl.Sdl.K.f2 -> "F2"
+  | x when x = Tsdl.Sdl.K.f3 -> "F3"
+  | x when x = Tsdl.Sdl.K.f4 -> "F4"
+  | x when x = Tsdl.Sdl.K.f5 -> "F5"
+  | x when x = Tsdl.Sdl.K.f6 -> "F6"
+  | x when x = Tsdl.Sdl.K.f7 -> "F7"
+  | x when x = Tsdl.Sdl.K.f8 -> "F8"
+  | x when x = Tsdl.Sdl.K.f9 -> "F9"
+  | x when x = Tsdl.Sdl.K.f10 -> "F10"
+  | x when x = Tsdl.Sdl.K.f11 -> "F11"
+  | x when x = Tsdl.Sdl.K.f12 -> "F12"
+  | x when x = Tsdl.Sdl.K.insert -> "Insert"
+  | x when x = Tsdl.Sdl.K.home -> "Home"
+  | x when x = Tsdl.Sdl.K.pageup -> "Pageup"
+  | x when x = Tsdl.Sdl.K.delete -> "Delete"
+  | x when x = Tsdl.Sdl.K.kend -> "End"
+  | x when x = Tsdl.Sdl.K.pagedown -> "Pagedown"
+  | x when x = Tsdl.Sdl.K.right -> "Right"
+  | x when x = Tsdl.Sdl.K.left -> "Left"
+  | x when x = Tsdl.Sdl.K.down -> "Down"
+  | x when x = Tsdl.Sdl.K.up -> "Up"
+  | x when x = Tsdl.Sdl.K.kp_divide -> "Kp_divide"
+  | x when x = Tsdl.Sdl.K.kp_multiply -> "Kp_multiply"
+  | x when x = Tsdl.Sdl.K.kp_minus -> "Kp_minus"
+  | x when x = Tsdl.Sdl.K.kp_plus -> "Kp_plus"
+  | x when x = Tsdl.Sdl.K.kp_enter -> "Kp_enter"
+  | x when x = Tsdl.Sdl.K.kp_1 -> "Kp_1"
+  | x when x = Tsdl.Sdl.K.kp_2 -> "Kp_2"
+  | x when x = Tsdl.Sdl.K.kp_3 -> "Kp_3"
+  | x when x = Tsdl.Sdl.K.kp_4 -> "Kp_4"
+  | x when x = Tsdl.Sdl.K.kp_5 -> "Kp_5"
+  | x when x = Tsdl.Sdl.K.kp_6 -> "Kp_6"
+  | x when x = Tsdl.Sdl.K.kp_7 -> "Kp_7"
+  | x when x = Tsdl.Sdl.K.kp_8 -> "Kp_8"
+  | x when x = Tsdl.Sdl.K.kp_9 -> "Kp_9"
+  | x when x = Tsdl.Sdl.K.kp_0 -> "Kp_0"
+  | _ -> "Unknown"
 
+let string_to_key (str : string) : Tsdl.Sdl.keycode =
+  match str with
+  | "Backspace" -> Tsdl.Sdl.K.backspace
+  | "Unknown" -> Tsdl.Sdl.K.unknown
+  | "Tab" -> Tsdl.Sdl.K.tab
+  | "Return" -> Tsdl.Sdl.K.return
+  | "Space" -> Tsdl.Sdl.K.space
+  | "Exclaim" -> Tsdl.Sdl.K.exclaim
+  | "Quotedbl" -> Tsdl.Sdl.K.quotedbl
+  | "Hash" -> Tsdl.Sdl.K.hash
+  | "Dollar" -> Tsdl.Sdl.K.dollar
+  | "Percent" -> Tsdl.Sdl.K.percent
+  | "Ampersand" -> Tsdl.Sdl.K.ampersand
+  | "Quote" -> Tsdl.Sdl.K.quote
+  | "Leftparen" -> Tsdl.Sdl.K.leftparen
+  | "Rightparen" -> Tsdl.Sdl.K.rightparen
+  | "Asterisk" -> Tsdl.Sdl.K.asterisk
+  | "Plus" -> Tsdl.Sdl.K.plus
+  | "Comma" -> Tsdl.Sdl.K.comma
+  | "Minus" -> Tsdl.Sdl.K.minus
+  | "Period" -> Tsdl.Sdl.K.period
+  | "Slash" -> Tsdl.Sdl.K.slash
+  | "K0" -> Tsdl.Sdl.K.k0
+  | "K1" -> Tsdl.Sdl.K.k1
+  | "K2" -> Tsdl.Sdl.K.k2
+  | "K3" -> Tsdl.Sdl.K.k3
+  | "K4" -> Tsdl.Sdl.K.k4
+  | "K5" -> Tsdl.Sdl.K.k5
+  | "K6" -> Tsdl.Sdl.K.k6
+  | "K7" -> Tsdl.Sdl.K.k7
+  | "K8" -> Tsdl.Sdl.K.k8
+  | "K9" -> Tsdl.Sdl.K.k9
+  | "Colon" -> Tsdl.Sdl.K.colon
+  | "Semicolon" -> Tsdl.Sdl.K.semicolon
+  | "Less" -> Tsdl.Sdl.K.less
+  | "Equals" -> Tsdl.Sdl.K.equals
+  | "Greater" -> Tsdl.Sdl.K.greater
+  | "Question" -> Tsdl.Sdl.K.question
+  | "At" -> Tsdl.Sdl.K.at
+  | "Leftbracket" -> Tsdl.Sdl.K.leftbracket
+  | "Backslash" -> Tsdl.Sdl.K.backslash
+  | "Rightbracket" -> Tsdl.Sdl.K.rightbracket
+  | "Caret" -> Tsdl.Sdl.K.caret
+  | "Underscore" -> Tsdl.Sdl.K.underscore
+  | "Backquote" -> Tsdl.Sdl.K.backquote
+  | "A" -> Tsdl.Sdl.K.a
+  | "B" -> Tsdl.Sdl.K.b
+  | "C" -> Tsdl.Sdl.K.c
+  | "D" -> Tsdl.Sdl.K.d
+  | "E" -> Tsdl.Sdl.K.e
+  | "F" -> Tsdl.Sdl.K.f
+  | "G" -> Tsdl.Sdl.K.g
+  | "H" -> Tsdl.Sdl.K.h
+  | "I" -> Tsdl.Sdl.K.i
+  | "J" -> Tsdl.Sdl.K.j
+  | "K" -> Tsdl.Sdl.K.k
+  | "L" -> Tsdl.Sdl.K.l
+  | "M" -> Tsdl.Sdl.K.m
+  | "N" -> Tsdl.Sdl.K.n
+  | "O" -> Tsdl.Sdl.K.o
+  | "P" -> Tsdl.Sdl.K.p
+  | "Q" -> Tsdl.Sdl.K.q
+  | "R" -> Tsdl.Sdl.K.r
+  | "S" -> Tsdl.Sdl.K.s
+  | "T" -> Tsdl.Sdl.K.t
+  | "U" -> Tsdl.Sdl.K.u
+  | "V" -> Tsdl.Sdl.K.v
+  | "W" -> Tsdl.Sdl.K.w
+  | "X" -> Tsdl.Sdl.K.x
+  | "Y" -> Tsdl.Sdl.K.y
+  | "Z" -> Tsdl.Sdl.K.z
+  | "F1" -> Tsdl.Sdl.K.f1
+  | "F2" -> Tsdl.Sdl.K.f2
+  | "F3" -> Tsdl.Sdl.K.f3
+  | "F4" -> Tsdl.Sdl.K.f4
+  | "F5" -> Tsdl.Sdl.K.f5
+  | "F6" -> Tsdl.Sdl.K.f6
+  | "F7" -> Tsdl.Sdl.K.f7
+  | "F8" -> Tsdl.Sdl.K.f8
+  | "F9" -> Tsdl.Sdl.K.f9
+  | "F10" -> Tsdl.Sdl.K.f10
+  | "F11" -> Tsdl.Sdl.K.f11
+  | "F12" -> Tsdl.Sdl.K.f12
+  | "Insert" -> Tsdl.Sdl.K.insert
+  | "Home" -> Tsdl.Sdl.K.home
+  | "Pageup" -> Tsdl.Sdl.K.pageup
+  | "Delete" -> Tsdl.Sdl.K.delete
+  | "End" -> Tsdl.Sdl.K.kend
+  | "Pagedown" -> Tsdl.Sdl.K.pagedown
+  | "Right" -> Tsdl.Sdl.K.right
+  | "Left" -> Tsdl.Sdl.K.left
+  | "Down" -> Tsdl.Sdl.K.down
+  | "Up" -> Tsdl.Sdl.K.up
+  | "Kp_divide" -> Tsdl.Sdl.K.kp_divide
+  | "Kp_multiply" -> Tsdl.Sdl.K.kp_multiply
+  | "Kp_minus" -> Tsdl.Sdl.K.kp_minus
+  | "Kp_plus" -> Tsdl.Sdl.K.kp_plus
+  | "Kp_enter" -> Tsdl.Sdl.K.kp_enter
+  | "Kp_1" -> Tsdl.Sdl.K.kp_1
+  | "Kp_2" -> Tsdl.Sdl.K.kp_2
+  | "Kp_3" -> Tsdl.Sdl.K.kp_3
+  | "Kp_4" -> Tsdl.Sdl.K.kp_4
+  | "Kp_5" -> Tsdl.Sdl.K.kp_5
+  | "Kp_6" -> Tsdl.Sdl.K.kp_6
+  | "Kp_7" -> Tsdl.Sdl.K.kp_7
+  | "Kp_8" -> Tsdl.Sdl.K.kp_8
+  | "Kp_9" -> Tsdl.Sdl.K.kp_9
+  | "Kp_0" -> Tsdl.Sdl.K.kp_0
+  | _ -> Tsdl.Sdl.K.unknown
 
 let rec test_print_list (l : string list) =
   match l with
