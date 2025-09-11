@@ -1,4 +1,4 @@
-let find_index f lst =
+let find_index (f : 'a -> bool) (lst : 'a list) : 'a option =
   let rec loop i = function
     | [] -> None
     | head :: tail -> if f head then Some i else loop (i + 1) tail
@@ -8,18 +8,7 @@ let find_index f lst =
 let rec get_moves (s : string) : Utils.move list =
   let split = (String.trim s |> String.split_on_char ' ' |> List.map String.trim) in
   let res = List.map Utils.string_to_move split in
-  if List.exists (fun (x : Utils.move) -> x = Utils.None) res then
-    begin
-      let rec print_res res =
-        match res with
-        | h::t -> print_endline (Utils.move_to_string h); print_res t
-        | [] -> ()
-      in
-      print_res res;
-      let i = find_index (fun (x : Utils.move) -> x = Utils.None) res in
-      failwith ("invalid move in " ^ s ^ " index " ^ (string_of_int (Option.get i)))
-    end
-  else if List.length res = 0 then failwith "Combos must contain at least one move"
+  if List.length res = 0 then failwith "Combos must contain at least one move"
   else res
 
 let rec find_combo_mapping (l : string list) : Combo.Combo.t list =
