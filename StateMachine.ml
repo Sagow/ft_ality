@@ -235,7 +235,7 @@ let rec strip_prefix
 let build_initial_state_entry
   (one_event_list : ((ComboMap.pair_t * int) list))
   : TransitionMap.t =
-  let default_state_entry = TransitionMap.of_list [(Block, ([], 0));(Down, ([], 0));(FlipStance, ([], 0));(Left, ([], 0));(Right, ([], 0));(Tag, ([], 0));(Throw, ([], 0));(Up, ([], 0));(BK, ([], 0));(BP, ([], 0));(FK, ([], 0));(FP, ([], 0))] in
+  let default_state_entry = TransitionMap.of_list (List.map (fun x -> (x, ([], 0))) Utils.all_moves) in
   let replace_event_entry
     (map : TransitionMap.t)
     (entry : ComboMap.pair_t * int)
