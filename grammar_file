@@ -13,22 +13,223 @@ z -> [FK]
 x -> [FP]
 
 combo definitions
-c, a, [BP]
-Character, name of the attack, Up [FP] Right Right
-Character3, blabla, Throw [BP] [BP] Down
-Character2, name random, Up
-c, a, Up
-c, a, Throw
 
-e, a, Up Up
-f, b, Throw Throw
-g, c, Up Throw
-h, d, Throw Up
+Scorpion, Hellfire Jab, [FP]
+Scorpion, Hellfire Slash, Down [FK] [FP]
+Scorpion, Spear Toss, [FP] [BP]
+Scorpion, Flaming Uppercut, Down Down [FP] [FK]
+Scorpion, Chain Reaction, [FP] Left Right [BP]
+Scorpion, Hell’s Gate, FlipStance [FK] Block [FP]
+Scorpion, Inferno Strike, Down FlipStance [FP] [FK]
+Scorpion, Venom Fang, [BP] [FP] Throw
+Scorpion, Shadow Step, Left Right [FP] [FK]
+Scorpion, Death Chain, [FP] Block FlipStance [BP]
+Scorpion, Burning Rage, Down Left Right [FP] [FK]
+Scorpion, Hellfire Kick, Down Down Right [FP]
+Scorpion, Ghost Slash, [FP] FlipStance Throw
+Scorpion, Infernal Grip, Down Right [FP] [BP]
+Scorpion, Cinder Slam, Left [FK] [FP] Block
+Scorpion, Fiery Cyclone, Down FlipStance [FK] Throw
+Scorpion, Shadow Blaze, [FP] [FK] Down Right
+Scorpion, Flaming Chain, FlipStance [FP] Block Throw
+Scorpion, Hellfire Smash, Down Left [FP] [BP]
+Scorpion, Burning Spear, [FP] [BP] [FK]
+Scorpion, Inferno Fury, Down Down Left Right [FP] [FK] Block
 
-c, a, Up Up Up
-c, a, Throw Throw Throw
-c, a, Up Throw Throw
-c, a, Throw Up Up
+Kitana, Fan Swipe, [FK]
+Kitana, Fan Slice, [FK] [FP]
+Kitana, Royal Gust, Down [FK] Right
+Kitana, Razor Wind, [FP] Block [FK]
+Kitana, Death Fan, Left Right [FP] [FK]
+Kitana, Wind Block, Down FlipStance [FK] [FP]
+Kitana, Royal Slash, [FP] [BP]
+Kitana, Air Fan, Up Down [FK] [FP]
+Kitana, Wind Cutter, FlipStance [FP] Block
+Kitana, Fan Throw, [FP] Throw
+Kitana, Gale Strike, Down Right [FK] [FP]
+Kitana, Empress Slash, [FP] [FK] Block
+Kitana, Whirlwind, Left Right FlipStance [FP]
+Kitana, Fan Spike, Down Down [FK]
+Kitana, Razor Dance, [FP] [FP] Block
+Kitana, Air Slash, Up [FK] [FP]
+Kitana, Wind Fury, FlipStance Down Right [FP] [BP]
+Kitana, Fan Barrage, [FP] Left Right Block
+Kitana, Blade Storm, Down FlipStance [FK] Throw
+Kitana, Death Gale, Left [FP] Block Throw
+Kitana, Royal Cyclone, Down Down Left Right [FP] [FK]
 
-Character,othen name, [BP] Up [FP]
-Character2, dodo, Throw [BP] [BP] Right
+Sub-Zero, Ice Punch, [FP]
+Sub-Zero, Ice Blast, [FK] [FP]
+Sub-Zero, Freeze Kick, Down [FK] Right
+Sub-Zero, Cryo Smash, [FP] Block [FK]
+Sub-Zero, Frost Slash, Left Right [FP] [FK]
+Sub-Zero, Glacier Strike, Down FlipStance [FK] [FP]
+Sub-Zero, Ice Shield, [FP] [BP]
+Sub-Zero, Chill Wave, Up Down [FK] [FP]
+Sub-Zero, Frost Throw, FlipStance [FP] Throw
+Sub-Zero, Frozen Spear, [FP] Throw
+Sub-Zero, Ice Breaker, Down Right [FK] [FP]
+Sub-Zero, Frost Spike, [FP] [FK] Block
+Sub-Zero, Crystal Slash, Left Right FlipStance [FP]
+Sub-Zero, Blizzard, Down Down [FK]
+Sub-Zero, Freeze Spin, [FP] [FP] Block
+Sub-Zero, Glacial Slam, Up [FK] [FP]
+Sub-Zero, Ice Cyclone, FlipStance Down Right [FP] [BP]
+Sub-Zero, Frost Fang, [FP] Left Right Block
+Sub-Zero, Frozen Path, Down FlipStance [FK] Throw
+Sub-Zero, Cryo Crusher, Left [FP] Block Throw
+Sub-Zero, Glacial Storm, Down Down Left Right [FP] [FK]
+
+Liu Kang, Dragon Punch, [FP]
+Liu Kang, Dragon Kick, Down [FK]
+Liu Kang, Flame Punch, [FP] [BP]
+Liu Kang, Fire Spin, Left Right [FP] [FK]
+Liu Kang, Dragon Slam, Down FlipStance [FK]
+Liu Kang, Fire Cyclone, [FP] Block Throw
+Liu Kang, Flame Burst, Down Down [FP]
+Liu Kang, Dragon Strike, [FP] [FK] Block
+Liu Kang, Fire Spin Kick, FlipStance [FP] [FK]
+Liu Kang, Dragon Fury, Left Right [FP] [BP]
+Liu Kang, Blazing Flare, Down FlipStance [FK] Throw
+Liu Kang, Dragon Tail, [FP] Throw
+Liu Kang, Firestorm, Up Down [FK] [FP]
+Liu Kang, Dragon Flame, Down Right [FP] [FK]
+Liu Kang, Flame Sweep, [FP] Block [FK]
+Liu Kang, Dragon Blaze, FlipStance Down Left [FP]
+Liu Kang, Inferno Spiral, Left Right [FP] [FK] Block
+Liu Kang, Dragon Burst, Down Down [FP] [BP]
+Liu Kang, Flame Slash, [FP] FlipStance Throw
+Liu Kang, Dragon Spin, Left [FP] Block Throw
+Liu Kang, Firestorm Slash, Down Down Left Right [FP] [FK]
+
+Mileena, Fang Jab, [FP]
+Mileena, Fang Slash, [FP] [FK]
+Mileena, Blood Bite, Down [FK] [FP]
+Mileena, Death Spin, Left Right [FP]
+Mileena, Carnage Claw, FlipStance [FP] Block
+Mileena, Blood Feast, Down Down [FP] [FK]
+Mileena, Fang Throw, [FP] Throw
+Mileena, Fang Whirl, [FP] [FP] Block
+Mileena, Carnage Slash, Down Right [FK] [FP]
+Mileena, Blood Barrage, FlipStance Left Right [FP]
+Mileena, Fang Fury, Down FlipStance [FK] Throw
+Mileena, Death Claw, [FP] Throw Block
+Mileena, Carnage Spin, Up Down [FP] [FK]
+Mileena, Blood Slash, Left Right [FP] [BP]
+Mileena, Fang Burst, Down Down [FK] [FP]
+Mileena, Death Fang, [FP] Block Throw
+Mileena, Carnage Sweep, FlipStance [FP] Left Right
+Mileena, Blood Cyclone, Down Right [FP] [FK]
+Mileena, Claw Swipe, [FP] FlipStance Throw
+Mileena, Death Bite, Left [FP] Block Throw
+Mileena, Bloodstorm, Down Down Left Right [FP] [FK] Block
+
+Raiden, Shock Tap, [FP]
+Raiden, Thunder Shock, [FP] [BP]
+Raiden, Electric Surge, Down [FK] FlipStance
+Raiden, Lightning Strike, [FP] Block [FK]
+Raiden, Thunder Clap, Left Right [FP] [FK]
+Raiden, Storm Charge, Down FlipStance [FK] [FP]
+Raiden, Electric Bolt, [FP] Throw
+Raiden, Thunder Path, Up Down Left Right [FP] [BP] [FK]
+Raiden, Lightning Spin, FlipStance [FP] Block Throw
+Raiden, Volt Slash, Down Right [FK] [FP]
+Raiden, Thunder Blast, [FP] [BP] Block
+Raiden, Shock Wave, Left Right FlipStance [FP]
+Raiden, Thunderwave, Down Down [FK] [FP]
+Raiden, Thunder Smash, [FP] [FP] Block
+Raiden, Volt Kick, FlipStance Down Left [FP]
+Raiden, Lightning Fury, Left Right [FP] [FK] Block
+Raiden, Thunder Spin, Down Down [FP] [BP]
+Raiden, Electric Slash, [FP] FlipStance Throw
+Raiden, Volt Storm, Left [FP] Block Throw
+Raiden, Thunderbolt Strike, Down FlipStance [FP] Throw
+Raiden, Storm Fury, Down Down Left Right [FP] [FK] Block
+
+Johnny Cage, Quick Punch, [FK]
+Johnny Cage, Shadow Uppercut, [FP] [FK]
+Johnny Cage, Fame Punch, Down [FK] [FP]
+Johnny Cage, Hollywood Kick, Left Right [FP]
+Johnny Cage, Star Slam, FlipStance [FP] Block
+Johnny Cage, Fame Drop, [FP] [FP] Down Right FlipStance [BP] Block [FK]
+Johnny Cage, Shadow Kick, Down Right [FK] [FP]
+Johnny Cage, Spotlight Throw, [FP] Throw
+Johnny Cage, Fame Rush, Left Right FlipStance [FP]
+Johnny Cage, Shadow Slash, Down FlipStance [FK] Throw
+Johnny Cage, Star Strike, [FP] [BP] Block
+Johnny Cage, Hollywood Slam, Left Right [FP] [FK]
+Johnny Cage, Fame Cyclone, Down Down [FP] [FK]
+Johnny Cage, Shadow Blast, [FP] [FP] Block
+Johnny Cage, Star Fury, FlipStance Down Left [FP]
+Johnny Cage, Fame Spin, Left Right [FP] [FK] Block
+Johnny Cage, Shadow Storm, Down Down [FP] [BP]
+Johnny Cage, Star Throw, [FP] FlipStance Throw
+Johnny Cage, Fame Slash, Left [FP] Block Throw
+Johnny Cage, Shadow Fury, Down FlipStance [FP] Throw
+Johnny Cage, Hollywood Blast, Down Down Left Right [FP] [FK] Block
+
+Noob Saibot, Shadow Jab, [BP]
+Noob Saibot, Shadow Strike, [FP] [BP]
+Noob Saibot, Dark Slash, Down [FK] Right
+Noob Saibot, Shadow Spin, Left Right [FP]
+Noob Saibot, Phantom Grip, FlipStance [FP] Block
+Noob Saibot, Shadow Assault, Down Left Right [FP] [BP] FlipStance Tag Throw [FK]
+Noob Saibot, Dark Throw, [FP] Throw
+Noob Saibot, Shadow Rush, Left Right FlipStance [FP]
+Noob Saibot, Wraith Cut, Down FlipStance [FK] Throw
+Noob Saibot, Dark Blast, [FP] [BP] Block
+Noob Saibot, Dark Wrath, Left Right [FP] [FK]
+Noob Saibot, Phantom Cyclone, Down Down [FP] [FK]
+Noob Saibot, Dark Spin, [FP] [FP] Block
+Noob Saibot, Shadow Burst, FlipStance Down Left [FP]
+Noob Saibot, Phantom Strike, Left Right [FP] [FK] Block
+Noob Saibot, Dark Storm, Down Down [FP] [BP]
+Noob Saibot, Shadow Throw, [FP] FlipStance Throw
+Noob Saibot, Phantom Slash, Left [FP] Block Throw
+Noob Saibot, Dark Fury, Down FlipStance [FP] Throw
+Noob Saibot, Shadow Blast, Down Down Left Right [FP] [FK] Block
+Noob Saibot, Phantom Fury, FlipStance Left Right [FP] Throw
+
+Kabal, Sonic Jab, [FP]
+Kabal, Dash Strike, [FP] [FK]
+Kabal, Hook Slam, Down [FK] Right
+Kabal, Speed Slash, Left Right [FP]
+Kabal, Cyclone Spin, FlipStance [FP] Block
+Kabal, Dash Havoc, Up Down Left Right [FP] [FK] Block [BP] FlipStance Throw
+Kabal, Hook Throw, [FP] Throw
+Kabal, Speed Rush, Left Right FlipStance [FP]
+Kabal, Cyclone Slash, Down FlipStance [FK] Throw
+Kabal, Dash Blast, [FP] [BP] Block
+Kabal, Hook Fury, Left Right [FP] [FK]
+Kabal, Speed Cyclone, Down Down [FP] [FK]
+Kabal, Dash Spin, [FP] [FP] Block
+Kabal, Hook Burst, FlipStance Down Left [FP]
+Kabal, Speed Strike, Left Right [FP] [FK] Block
+Kabal, Cyclone Storm, Down Down [FP] [BP]
+Kabal, Dash Throw, [FP] FlipStance Throw
+Kabal, Hook Slash, Left [FP] Block Throw
+Kabal, Speed Fury, Down FlipStance [FP] Throw
+Kabal, Cyclone Blast, Down Down Left Right [FP] [FK] Block
+Kabal, Dash Fury, FlipStance Left Right [FP] Throw
+
+Jade, Razor Swipe, [FK]
+Jade, Razor Spin, [FP] [FK]
+Jade, Staff Strike, Down [FK] Right
+Jade, Razor Storm, Down Down Left Right [FP] [BP] [FK] [FP] Block Tag FlipStance
+Jade, Staff Throw, [FP] Throw
+Jade, Razor Rush, Left Right [FP]
+Jade, Spin Slash, FlipStance [FP] Block
+Jade, Razor Cyclone, Down FlipStance [FK] Throw
+Jade, Staff Blast, [FP] [BP] Block
+Jade, Razor Fury, Left Right [FP] [FK]
+Jade, Spin Storm, Down Down [FP] [FK]
+Jade, Staff Spin, [FP] [FP] Block
+Jade, Razor Burst, FlipStance Down Left [FP]
+Jade, Spin Strike, Left Right [FP] [FK] Block
+Jade, Staff Storm, Down Down [FP] [BP]
+Jade, Razor Throw, [FP] FlipStance Throw
+Jade, Whirlwind Cut, Left [FP] Block Throw
+Jade, Staff Fury, Down FlipStance [FP] Throw
+Jade, Razor Blast, Down Down Left Right [FP] [FK] Block
+Jade, Spin Fury, FlipStance Left Right [FP] Throw
+Jade, Staff Cyclone, Left Right Down FlipStance [FP]
