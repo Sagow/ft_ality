@@ -322,3 +322,16 @@ let build
     the first of the list is the last created, which is enought to check as the elements are sorted in the map *)
   (* Create the root element and complete its transition table *)
   (* For each state in the lists (join or not elements in the same list), for each move, find the index of the next state, or, if not found, copy the one from root *)
+
+let perform_transition
+  (table : TransitionMap.t list)
+  (state : int)
+  (input : Utils.move)
+  : combo_data list * int =
+  let table_entry = List.nth table state in
+  match TransitionMap.find_opt table_entry input with
+  | Some(combos, next_state) -> begin
+    Printf.printf "%s\nTransition to state %d\n" (Debug.string_of_combo_data_list combos) next_state;
+    (combos, next_state)
+  end
+  | None -> failwith ("It should not happen")
