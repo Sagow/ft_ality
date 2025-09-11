@@ -5,7 +5,9 @@ type combo = ((move list) * string)
 
 let is_mapped (k : key) : move =
   (* regarder si c'est dans le tableau des keys associées, renvoyer le move associé *)
-  FlipStance
+  match Utils.all_moves with
+  | head :: _ -> head
+  | [] -> failwith ("Utils.all_moves contain no move !")
 
 let rec wait_for_valid_entry () : move =
   let event = Tsdl.Sdl.Event.create () in
