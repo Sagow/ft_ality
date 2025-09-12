@@ -307,9 +307,9 @@ let build
   let with_intermediate_states = add_intermediate_states splitted_map in
   (* Debug.print_splitted_combo_map with_intermediate_states; *)
   let numbered_combomap = attribute_state_numbers with_intermediate_states in
-  Debug.print_splitted_numbered_combomap numbered_combomap;
+  (* Debug.print_splitted_numbered_combomap numbered_combomap; *)
   let table = build_table numbered_combomap in
-  Debug.print_transition_table table;
+  (* Debug.print_transition_table table; *)
   table
   (* Transform Combo.Combo.t list to map (Utils.move list * combo_data list) - combo list containing only one element at the time *)
   (* Use merge_duplicates to merge combos with same move set in same list *)
@@ -330,8 +330,12 @@ let perform_transition
   : combo_data list * int =
   let table_entry = List.nth table state in
   match TransitionMap.find_opt table_entry input with
-  | Some(combos, next_state) -> begin
-    Printf.printf "%s\nTransition to state %d\n" (Debug.string_of_combo_data_list combos) next_state;
-    (combos, next_state)
-  end
+  | Some(combos, next_state) -> (combos, next_state)
   | None -> failwith ("It should not happen")
+
+let rec print_combo_list
+  (combo_list : combo_data list)
+  : unit =
+  match combo_list with
+  | (character, combo) :: tail -> print_endline (combo ^ " (" ^ character ^ ")"); print_combo_list tail
+  | [] -> ()

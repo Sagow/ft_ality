@@ -1,11 +1,18 @@
+module KeyMoveKV : (FtMap.KEYVALUE with type key_t = Utils.key and type value_t = Utils.move) = struct
+  type key_t = Utils.key
+  type value_t = Utils.move
+  let cmp = Int.compare
+end
 
-let rec print_pair (l : (Utils.move * Utils.key) list) =
+module KeyMoveMap : (FtMap.MAP with type key_t := KeyMoveKV.key_t and type value_t := KeyMoveKV.value_t) = FtMap.Make (KeyMoveKV)
+
+let rec print_pair (l : KeyMoveMap.pair_t list) =
   match l with 
-  | h::t -> print_endline (Utils.move_to_string (fst h) ^ " is " ^ Utils.key_to_string (snd h)); print_pair t
+  | h::t -> print_endline (Utils.move_to_string (snd h) ^ " is " ^ Utils.key_to_string (fst h)); print_pair t
   | [] -> ()
 
-let rec find_key_mapping (l : string list) : (Utils.move * Utils.key) list =
-  let rec map_key l =
+let rec find_key_mapping (l : string list) : KeyMoveMap.t =
+  let rec map_key l : (Utils.key * Utils.move) list =
     let recognize_key (s: string) : Utils.key =
       let first_word (s : string) : string =
         String.split_on_char ' ' s |> List.hd
@@ -29,12 +36,12 @@ let rec find_key_mapping (l : string list) : (Utils.move * Utils.key) list =
       else
         begin
         let m = last_word h |> Utils.string_to_move in
-        (m, recognize_key h)::(map_key t)
+        (recognize_key h, m)::(map_key t)
         end
     end
     | [] -> []
   in
 match l with 
-| h::t when (String.trim h) = "key mapping" -> map_key t
+| h::t when (String.trim h) = "key mapping" -> KeyMoveMap.of_list (map_key t)
 | h::t -> find_key_mapping t
-| [] -> print_endline "key mapping not found. Did you forget to start with \"key mapping\" keyword?"; []
+| [] -> failwith ("key mapping not found. Did you forget to start with \"key mapping\" keyword?")

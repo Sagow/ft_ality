@@ -9,3 +9,5 @@ module TransitionMap : (FtMap.MAP with type key_t := TransitionEntryKV.key_t and
 val build : Combo.Combo.t list -> TransitionMap.t list
 
 val perform_transition : TransitionMap.t list -> int -> Utils.move -> combo_data list * int
+
+val print_combo_list : combo_data list -> unit
