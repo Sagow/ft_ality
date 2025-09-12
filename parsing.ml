@@ -23,10 +23,10 @@ let check_validity_of_mapping (key_move_map : KeyMoveMap.t) : unit =
   if nb_moves < 12 then
     begin
       Key_mapping.print_pair key_move_map;
-    failwith "At least one move is undefined in the key mapping"
+    failwith "At least one move is undefined in the key mapping (or a key was used twice)"
     end
   else if nb_keys < List.length (snd split) then
-    failwith "At least one key has been used twice when defining moves"
+    failwith "At least one move has been defined twice"
 
 let () =
   if (Array.length Sys.argv) <> 2 then
